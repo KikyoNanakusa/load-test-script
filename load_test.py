@@ -19,8 +19,8 @@ def main():
 
     with ThreadPoolExecutor(max_workers=requests_conut) as executor:
         for _ in range(requests_conut):
-            executor.map(send_request, urls)
+            executor.map(send_request, urls * requests_conut)
 
 
-if __name__ == "main":
+if __name__ == "__main__":
     main()
